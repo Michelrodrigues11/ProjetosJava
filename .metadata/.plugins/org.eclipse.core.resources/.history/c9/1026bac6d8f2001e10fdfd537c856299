@@ -1,0 +1,46 @@
+package br.com.fabricaroupa.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import br.com.fabricaroupa.model.Calca;
+
+
+public class CalcaDAO {
+	private Connection con;
+
+	public Connection getCon() {
+		return con;
+	}
+
+	public void setCon(Connection con) {
+		this.con = con;
+	}
+
+	public CalcaDAO() {
+
+	}
+
+	public CalcaDAO(Connection con) {
+		setCon(con);
+	}
+
+	public String inserir(Calca calca) {
+		String sql = "insert into calca(peso, tipo, tipoTecido) values (?,?,?)";
+		try {
+			PreparedStatement ps = getCon().prepareStatement(sql);
+			ps.setDouble(1, calca.getPeso());
+			ps.setString(2, calca.getTipoTecido());
+			ps.setString(3, calca.getTipo());
+
+			if (ps.executeUpdate() > 0) {
+				return "Calca Inserido com sucesso.";
+			} else {
+				return "Erro ao inserir o calca.";
+			}
+		} catch (SQLException e) {
+			return e.getMessage();
+		}
+	}
+}

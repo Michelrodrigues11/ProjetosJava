@@ -1,0 +1,6 @@
+1696544508587	Rename package 'br.com.teste.model'
+1696544544679	Rename package 'br.com.conexao.model'
+1696544629955	Delete element
+1696544725160	Encapsulate field 'nome'
+1696544846360	Encapsulate field 'curso'
+1696546228784	Rename compilation unit 'ProfessorDao.java'

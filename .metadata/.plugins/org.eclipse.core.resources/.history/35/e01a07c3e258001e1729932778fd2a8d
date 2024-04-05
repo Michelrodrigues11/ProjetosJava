@@ -1,0 +1,49 @@
+package br.com.array.teste;
+
+import javax.swing.JOptionPane;
+
+public class TesteNumero {
+
+	public static void main(String[] args) {
+		
+		
+		  int[] numeros = new int[3];
+		  
+		  int Numero = Integer.parseInt(JOptionPane.showInputDialog("Digite o numero"));
+	        
+		  for (int i = 0; i < 3; i++){
+				  
+			  
+		  }
+	        
+	        
+	
+	
+	}
+
+}       
+	        
+	                
+	                
+	          
+	
+	
+	
+	
+
+
+
+
+
+
+			
+		
+		
+			
+		
+		
+		
+		
+		
+		
+

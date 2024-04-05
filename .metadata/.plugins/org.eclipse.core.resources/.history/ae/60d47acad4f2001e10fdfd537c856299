@@ -1,0 +1,5 @@
+package br.com.fabricaroupa.dao;
+
+public class RoupaDao {
+
+}

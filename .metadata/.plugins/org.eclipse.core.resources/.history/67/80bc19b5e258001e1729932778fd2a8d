@@ -1,0 +1,12 @@
+package br.com.array.teste;
+
+public class TesteNome {
+
+	public static void main(String[] args) {
+		
+		String nome[]= new String[3];
+		
+		
+	}
+
+}

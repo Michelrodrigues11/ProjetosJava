@@ -1,0 +1,47 @@
+package br.com.fabricaroupa.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import br.com.fabricacalcado.model.Roupa;
+
+public class RoupaDao {
+	public class RoupaDAO {
+		private Connection con;
+
+		public Connection getCon() {
+			return con;
+		}
+
+		public void setCon(Connection con) {
+			this.con = con;
+		}
+
+		public RoupaDAO() {
+
+		}
+
+		public RoupaDAO(Connection con) {
+			setCon(con);
+		}
+
+		public String inserir(Roupa roupa) {
+			String sql = "insert into roupa(tamanho, peso, nome, quantidadeTiras) values (?,?,?,?)";
+			try {
+				PreparedStatement ps = getCon().prepareStatement(sql);
+				ps.setInt(1, roupa.getTamanho());
+				ps.setDouble(2, roupa.getPeso());
+				
+				
+
+				if (ps.executeUpdate() > 0) {
+					return "Roupa Inserido com sucesso.";
+				} else {
+					return "Erro ao inserir o roupa.";
+				}
+			} catch (SQLException e) {
+				return e.getMessage();
+			}
+		}
+}
